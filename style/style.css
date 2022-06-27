@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+p{
+    padding: 5px;
+}
+
+
+.botao {
+    padding: 10px;
+    
+}
+
+
+.formulario {
+    padding: 10px;
+    display: block;
+
+}
+
+.bnt {
+    padding: 20px;
+    margin-right: 10px;
+
+}

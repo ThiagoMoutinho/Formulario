@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Formulário</title>
+</head>
+<body>
+    <form id="dados" method="post" action="form" id="form">
+        <span id="msgAlertaErro" onsubmit="return validarDados()"></span>
+        <div>
+            <h1 class="cabecalho">Formulario de Preenchimento</h1>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="username" placeholder="Nome">
+            <label for="telefone">Telefone</label>
+            <input type="number" name="telefone" id="telefone" placeholder="Telefone" >
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <label for="nascimento">Nascimento</label>
+            <input type="date" name="nacimento" id="nascimento" placeholder="Nascimento" >
+        </div>
+        <div class="botao">
+            <input type="button" id="btn" onclick="dadosPreenchidos()" ondblclick="validarDados()" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+    </form>
+
+    
+    <script src="dados.js"></script>
+</body>
+</html>
