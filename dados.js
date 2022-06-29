@@ -1,46 +1,56 @@
+const button = document.getElementById('button')
+
 function dadosPreenchidos() {
     const username = document.getElementById('username').value;
     const telefone = document.getElementById('telefone').value;
     const email = document.getElementById('email').value;
     const nascimento = document.getElementById('nascimento').value;
-
+    
+    var msgErro = '';
+    var msgArray = new Array();
+    var sucesso = 'Documento salvo com sucesso';
 
     if(username === '') {
-        alert('Erro: Necessário preencher o campo Nome');
-        document.getElementById('username').focus();
-        return true;
-    } else if (telefone === '') {
-        alert('Erro: Necessário preencher o campo Telefone')
-        document.getElementById('telefone').focus();
-        return true;
-    } else if (email === '') {
-        alert('Erro: Necessário preencher o campo Email')
-        document.getElementById('email').focus();
-        return true;
-    } else if (nascimento === '') {
-        alert('Erro: Necessário preencher o campo Nascimento')
-        document.getElementById('email').focus();
-        return true;
-    } else if((username === '') && (telefone === '')) {
-        alert('Erro: Necessário preencher o campos')
+        msgErro += 'Erro: Necessário preencher o campo Nome \n';
+        msgArray.push("Erro: Necessário preencher o campo Nome");
+    } 
+
+    if (telefone === '') {
+        msgErro += 'Erro: Necessário preencher o campo Telefone \n';
+        msgArray.push('Erro: Necessário preencher o campo Telefone');
+         
+    } if (email === '' || email.indexOf('@') === -1 || email.indexOf(".") === -1) {
+        msgErro += 'Erro: Obrigatorio colocar um email válido \n'
+        msgArray.push('Erro: Obrigatorio colocar um email válido');
+        
+    } if (nascimento === '') {
+        msgErro += 'Erro: Necessário preencher o campo Nascimento \n'
+        msgArray.push('Erro: Necessário preencher o campo Nascimento');
+        
     }
-     else {
-        alert('Documento salvo com sucesso')
+
+    if(msgArray.length > 0) {
+        alert(msgArray.join('\n'));
+    }else {
+        alert(sucesso)
+        alert('Nome: ' + username + '\n Telefone : ' + telefone + '\n email: ' + email +'\n nascimento : ' + nascimento )
     }
 
 
-    alert('Nome: ' + username + '\n Telefone : ' + telefone + '\n email: ' + email +'\n nascimento : ' + nascimento )
+    //  if (msgErro){
+    //     alert(msgErro)
+    // } else  {
+    //     alert(sucesso)
+    //     alert('Nome: ' + username + '\n Telefone : ' + telefone + '\n email: ' + email +'\n nascimento : ' + nascimento )
+    // }
 
     
+
+    
+
+    
+
+    
+
 }
 
-function validarDados() {
-
-    if(dadosPreenchidos()) {
-        alert('Dados enviados com sucesso');
-        return true;
-    } else {
-        alert('Erro ao enviar')
-        return false;
-    }
-}

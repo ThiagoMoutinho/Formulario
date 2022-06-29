@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link defer rel="stylesheet" href="style/style.css">
     <title>Formulário</title>
 </head>
 <body>
-    <form id="dados" method="post" action="form" id="form">
-        <span id="msgAlertaErro" onsubmit="return validarDados()"></span>
+    <form class="form" method="post" action="form" id="dados" onsubmit="return" validar()>
+         <h2 class="cabecalho">Formulario de Preenchimento</h2>
         <div>
-            <h1 class="cabecalho">Formulario de Preenchimento</h1>
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="username" placeholder="Nome">
             <label for="telefone">Telefone</label>
@@ -23,7 +22,7 @@
         </div>
         <div class="botao">
             <input type="button" id="btn" onclick="dadosPreenchidos()" ondblclick="validarDados()" value="Enviar">
-            <input type="reset" value="Limpar">
+            <input type="reset" id="btn" value="Limpar">
         </div>
     </form>
 
